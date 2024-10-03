@@ -2,3 +2,5 @@
 	path = components/esp-WS2812-cpp
 	url = https://github.com/timreddy/esp-WS2812-cpp.git
 	branch = main
+[submodule "components/esp-WS2812-cpp/"]
+	branch = main
