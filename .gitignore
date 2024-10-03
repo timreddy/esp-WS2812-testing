@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+dependencies.lock
+.devcontainer/devcontainer.json
+.devcontainer/Dockerfile
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/settings.json
+.vscode/tasks.json
+sdkconfig.old
