@@ -31,7 +31,18 @@ void ledBlinkRG(void* pParam) {
 extern "C" void app_main() {
     WS2812 led(BLINK_GPIO_POWER, BLINK_GPIO);
     led.on();
-    ESP_LOGE(TAG, "LED on");
+    ESP_LOGI(TAG, "LED on");
+
+    ESP_LOGI(TAG, "Testing power on/off");
+    led.set_rgb(0xFF, 0x00, 0x00);
+    vTaskDelay(pdMS_TO_TICKS(250));
+    led.off();
+    vTaskDelay(pdMS_TO_TICKS(250));
+    led.on();
+    vTaskDelay(pdMS_TO_TICKS(250));
+    led.off();
+    vTaskDelay(pdMS_TO_TICKS(250));
+    led.on();
 
     TaskHandle_t led_task;
     xTaskCreate(ledBlinkRG, "WS2812_LED", 2048, &led, 10, &led_task);
